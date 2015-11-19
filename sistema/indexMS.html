@@ -1,0 +1,267 @@
+<!DOCTYPE HTML>
+<!-- <html manifest='website.appcache' lang="en"> //-->
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+
+	<meta http-equiv="cache-control" content="max-age=0" />
+	<meta http-equiv="cache-control" content="no-cache" />
+	<meta http-equiv="expires" content="0" />
+	<meta http-equiv="expires" content="Tue, 01 Jan 1980 1:00:00 GMT" />
+	<meta http-equiv="pragma" content="no-cache" />
+	
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="description" content="">
+	<meta name="author" content="Roberto Guzman Guatemenu.com">
+
+	<title>RZM Motus v1.0</title>
+
+	<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+	<!--[if lt IE 9]>
+	<script src="js/html5shiv.js"></script>
+	<script src="js/respond.min.js"></script>
+	<![endif]-->
+
+	<style type="text/css">
+		
+		.tituloForm {
+			display: block;
+			padding: 5px;
+			margin-bottom: 15px;
+			width: 400px;
+			text-align: center;
+			background-color: #eeeeee;
+			border: 0px solid #999999;
+			-webkit-border-radius: 10px;
+			-moz-border-radius: 10px;
+			border-radius: 10px;
+		}
+		
+		.delRecord {
+			display: block;
+			width: 50px;
+			height: 50px;
+			background-color: #ff0000;
+			color: #ffffff;
+			text-align: center;
+			padding-top: 13px;
+		}
+
+		td {
+			vertical-align:top;
+		}
+		
+		.dformclass td, .dformHTML td {
+			border: 0px solid #aaaaaa;
+			padding:5px;
+		}
+
+		.dformclass tr, .dformHTML tr {
+			background-color: #dddddd;
+		}
+		
+		.dformclass tr:hover, .dformHTML tr:hover {
+			background-color: #cccccc;
+		}
+		
+		.dformclass tr:active, .dformHTML tr:active {
+			background-color: #abcdef;
+		}
+		
+		.tablaResumen {
+			width:800px;
+			border: 0px solid #fedcba;
+		}
+
+		.tablaResumen td {
+			border: 0px solid #000000;
+		}
+
+		.tituloTablaResumen {
+			text-align: center;
+			background-color:#abcdef;
+		}
+
+		.logo {
+			width:130px;
+			height:186px;
+			-webkit-border-radius: 5px;
+			-moz-border-radius: 5px;
+			border-radius: 5px;
+			margin-right: 20px;
+		}
+
+		#fixedContainer{
+			background-color:#ddd;
+			position: fixed;
+			width: 100%;
+			padding-top: 5px;
+			padding-bottom: 5px;
+			bottom: 0%;
+			text-align: center;
+		}
+
+		.usuarioActivo {
+			width: 180px;
+			position: fixed;
+			top:5px;
+			right: 5px;
+			padding:2px;
+			text-align: center; 
+			background-color:#12416b;
+			color:#ffffff;
+			-webkit-border-radius: 5px;
+			-moz-border-radius: 5px;
+			border-radius: 5px;
+		}
+
+		ul#tabs { list-style-type: none; margin: 30px 0 0 0; padding: 0 0 0.3em 0; }
+		ul#tabs li { display: inline; }
+		ul#tabs li a { -webkit-border-radius: 5px 5px 0 0; -moz-border-radius: 5px 5px 0 0; border-radius: 5px 5px 0 0; }
+		ul#tabs li a { color: #ffffff; background-color: #12416b; border: 0px solid #c9c3ba; border-bottom: none; padding: 0.3em; text-decoration: none; }
+		ul#tabs li a:hover { background-color: #bfebfb; color: #12416b;}
+		ul#tabs li a.selected { color: #000; background-color: #ffffff; font-weight: bold; padding: 0.7em 0.3em 0.38em 0.3em; }
+
+		div.tabContent { 
+			border: 0px solid #c9c3ba; 
+			padding: 0.5em; 
+			background-color: #ffffff;
+			-webkit-border-radius: 0 5px 5px 5px;
+			-moz-border-radius: 0 5px 5px 5px;
+			border-radius: 0 5px 5px 5px;
+			font-size: x-small; 
+			font-family: Arial, 'Lucida Grande', Verdana, Sans-Serif;
+		}
+
+		div.tabContent.hide { display: none; }
+
+		body {
+			background-color: #aaaaaa;
+			color: #000000;
+			font-size: small; 
+			font-family: Arial, 'Lucida Grande', Verdana, Sans-Serif;
+		}
+
+		.dmenu li {
+			display:block;
+			border: 0px solid #888888;
+			background-color: #12416b;
+			color: #ffffff;
+			margin-top: 10px;
+			margin-left: -45px;
+			padding:5px;
+			width:130px;
+			-webkit-border-radius: 5px;
+			-moz-border-radius: 5px;
+			border-radius: 5px;
+			cursor: pointer;
+		}
+
+	</style>
+
+</head>
+
+<body>
+	<a name='confirma'></a>
+
+	<table style='width:100%'>
+	<tr><td id='tdMenuC' style="vertical-align:top;">
+		<div id='menuC' style='display:block;position:relative;margin-top:25px;'>
+			<ul id="menuPrincipal" class='dmenu'>
+			</ul>
+			<img src='RZMCorp.png' class='logo'>
+		</div>
+	</td><td style="vertical-align:top;">
+
+		<div class="mainpanel">
+			<div class="pageheader" id="encabezadoPagina">
+				<div id='menuR' style='display:none;'>
+					<input type='button' value='+' onclick='restauraMenu();'>
+				</div>
+				<span class='usuarioActivo' id="usuarioActivo"></span>
+			</div>
+
+			<div class="contentpanel" id="contenidoPagina2">
+
+				<ul id="tabs">
+				  <li><a href="#inicio">INICIO</a></li>
+				  <li><a href="#formulario">FORMULARIO</a></li>
+				  <li><a href="#reporte">REPORTE</a></li>
+				  <li><a href="#salidas">SALIDAS</a></li>
+				  <li><a href="#pendientes">PEDIDOS PENDIENTES</a></li>
+				  <li><a href="#entregados">REPORTE ENTREGADOS</a></li>
+				</ul>
+
+				<div class="tabContent" id="inicio">
+				  <h2>INICIO</h2>
+				  <div style='font-size:small; font-family: Arial, Verdana, Sans-Serif;'>
+					<center>
+						<h2>RZM CORP</h2>
+						<h3>SISTEMA PARA EL CONTROL DEL INVENTARIO</h3>
+					</center>
+					<p style='width:500px; text-align:justify;'>En el campo de la logística, <b>picking o preparación de pedidos</b> es el proceso de recogida de material extrayendo unidades o conjuntos empaquetados de una unidad de empaquetado superior que contiene más unidades que las extraídas. En general, el proceso en el que se recoge material abriendo una unidad de empaquetado.</p>
+					<p style='width:500px; text-align:justify;'>Puede ser un picking de unidades cuando se extraen productos unitarios de una caja o un picking de cajas cuando se recogen cajas de una paleta o de un contenedor también llamado packing.</p>
+					<p style='width:500px; text-align:justify;'>El picking es un proceso básico en la preparación de pedidos en los almacenes que afecta en gran medida a la productividad de toda la cadena logística, ya que, en muchos casos, es el cuello de botella de la misma.</p>
+				  </div>
+				</div>
+
+				<div class="tabContent" id="formulario">
+				  <h2>FORMULARIO</h2>
+				  <div>
+					<div class="contentpanel" id="contenidoForm"></div>
+				  </div>
+				</div>
+
+				<div class="tabContent" id="reporte">
+				  <h2>REPORTE</h2>
+				  <div>
+					<div class="contentpanel" id="contenidoReporte"></div>
+				  </div>
+				</div>
+				
+				<div class="tabContent" id="salidas">
+				  <h2>SALIDAS</h2>
+				  <div>
+					<div class="contentpanel" id="contenidoSalidas"></div>
+				  </div>
+				</div>
+
+				<div class="tabContent" id="pendientes">
+				  <h2>PEDIDOS PENDIENTES</h2>
+				  <div>
+					<div class="contentpanel" id="contenidopendientes"></div>
+				  </div>
+				</div>
+
+				<div class="tabContent" id="entregados">
+				  <h2>PEDIDOS ENTREGADOS</h2>
+				  <div>
+					<div class="contentpanel" id="contenidoentregados"></div>
+				  </div>
+				</div>
+			</div>
+
+			<div class="contentpanel" id="piedepagina"></div>
+			
+		</div>
+	</td></tr>
+	</table>
+
+	<div style='display:none'>
+		<div id='dformTemplatefv'>
+			<span id='mantenimientoTabla' style='display:none;'>@tabla@</span>
+			<table>
+				<tr><td>@reporte@</td></tr>
+			</table>
+		</div>
+	</div>
+
+	<div id='fixedContainer'><strong>RZMCORP</strong> powered by <strong title='Asynchronous, Javascript, HTML, CSS, NoSQL, In-Memory Engine.'>Motus</strong> Technology - Guatemenu 2015.</div>
+
+	<script language="javascript" type="text/javascript">
+		// local settings
+		var activePage = "index";
+	</script>
+	<script src="functionsMS.js" language="javascript" type="text/javascript"></script>
+</body>
+</html>

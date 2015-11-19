@@ -1,0 +1,67 @@
+<html>
+    <head>
+        <title>ultimategps.inteltrackgt.com</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <style>
+            iframe{
+                width: 100% !important;
+                height: 100% !important;
+                border: none !important;
+                overflow: no-content !important;
+                z-index: 100;
+                position: fixed;
+                top: 0 !important;
+                left: 0 !important;
+                bottom: 0 !important;
+                right: 0 !important;
+            }
+        </style>
+    </head>
+	<script>
+
+		function createNotification(msg) {
+			if (!"Notification" in window) {
+				console.log("Este navegador no soporta notificaciones.");
+			} else if (Notification.permission === "granted") {
+				var img = 'icon.png';
+				var text = msg;
+				var notification = new Notification(' Atencion ', {
+					body: text,
+					icon: img
+				});
+				setTimeout(function () {
+					notification.close();
+				}, 5000);
+			} else if (Notification.permission !== 'denied') {
+				Notification.requestPermission(function (permission) {
+					if (!('permission' in Notification)) {
+						Notification.permission = permission;
+					}
+					if (permission === "granted") {
+						var img = 'icon.png';
+						var text = msg;
+						var notification = new Notification('atención', {
+							body: text,
+							icon: img
+						});
+						setTimeout(function () {
+							notification.close();
+						}, 5000);
+					}
+				});
+			}
+		}
+
+		function cargarMensaje(){
+			setTimeout(function () {
+				createNotification("Bienvenido a Inteltrack.");
+			}, 10000);
+		}
+
+	</script>
+    <body onload='cargarMensaje();'>
+		<iframe src="http://c2stek.inteltrackgt.com/"></iframe>
+    </body>
+</html>
+
