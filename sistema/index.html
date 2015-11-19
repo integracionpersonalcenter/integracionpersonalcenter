@@ -71,33 +71,30 @@
 	</style>
 </head>
 
-<body class="signin">
+<body>
 
-<div class='divEncabezado'>
+<center>
+	<form method="post" action="javascript:return false;" style='display:blick;width:405px;background-color:transparent;'>
+		<table>
+			<tr>
+				<td style='vertical-align:top;'>
+					<div class='titulo'>
+						<span style='display:block; margin-left:5px; width:190px; font-weight: bold; font-size: 20px;'>INTEGRACION PERSONAL<br>CENTER</span>
+						<input id="usuario" type="text" class="form-control uname" style=' width: 190px; margin-left:5px;margin-top:30px;' placeholder="Usuario" />
+						<input id="clave" type="password" class="form-control pword" style=' width: 190px; margin-left:5px;margin-top:10px;' placeholder="Clave" />
+						<button class="btn btn-success btn-block" style=' width: 190px; margin-left:5px;margin-top:10px;' onclick="autorizaringreso()">Validar</button>
+					</div>
+				</td>
+			</tr>
+		</table>
+	</form>
+</center>
 
-	<center>
-		<form method="post" action="javascript:return false;" style='display:blick;width:405px;background-color:transparent;'>
-			<table>
-				<tr>
-					<td style='vertical-align:top;'>
-						<div class='titulo'>
-							<span style='display:block; margin-left:5px; width:190px; font-weight: bold; font-size: 20px;'>INTEGRACION PERSONAL<br>CENTER</span>
-							<input id="usuario" type="text" class="form-control uname" style=' width: 190px; margin-left:5px;margin-top:30px;' placeholder="Usuario" />
-							<input id="clave" type="password" class="form-control pword" style=' width: 190px; margin-left:5px;margin-top:10px;' placeholder="Clave" />
-							<button class="btn btn-success btn-block" style=' width: 190px; margin-left:5px;margin-top:10px;' onclick="autorizaringreso()">Validar</button>
-						</div>
-					</td>
-				</tr>
-			</table>
-		</form>
-	</center>
+<div id='fixedContainer'><strong>INTEGRACION PERSONAL CENTER</strong> powered by <strong title='Asynchronous, Javascript, HTML, CSS, NoSQL, In-Memory Engine.'>Motus</strong> Technology - Guatemenu 2015.</div>
 
-	<div id='fixedContainer'><strong>INTEGRACION PERSONAL CENTER</strong> powered by <strong title='Asynchronous, Javascript, HTML, CSS, NoSQL, In-Memory Engine.'>Motus</strong> Technology - Guatemenu 2015.</div>
-
-	<script language="javascript" type="text/javascript">
-		var activePage = "ingresar";
-	</script>
-
-	<script src="functionsMS.js" language="javascript" type="text/javascript"></script>
+<script language="javascript" type="text/javascript">
+	var activePage = "ingresar";
+</script>
+<script src="functionsMS.js" language="javascript" type="text/javascript"></script>
 </body>
 </html>
